@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
     <linearGradient id="surface" x1="10" y1="6" x2="54" y2="60" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#293b32"/>
-      <stop offset="1" stop-color="#101713"/>
+      <stop stop-color="#233957"/>
+      <stop offset="1" stop-color="#101b2d"/>
     </linearGradient>
   </defs>
-  <rect x="3" y="3" width="58" height="58" rx="11" fill="#080d0b"/>
-  <rect x="6" y="6" width="52" height="52" rx="9" fill="url(#surface)" stroke="#557066" stroke-width="2"/>
-  <text x="32" y="39" fill="#d9dfdc" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700" text-anchor="middle" letter-spacing="1">NA</text>
-  <path d="M17 47h30" stroke="#43ac79" stroke-width="2" stroke-linecap="round"/>
+  <rect x="3" y="3" width="58" height="58" rx="11" fill="#080e19"/>
+  <rect x="6" y="6" width="52" height="52" rx="9" fill="url(#surface)" stroke="#55739a" stroke-width="2"/>
+  <text x="32" y="39" fill="#c2d0e4" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700" text-anchor="middle" letter-spacing="1">NA</text>
+  <path d="M17 47h30" stroke="#65aaff" stroke-width="2" stroke-linecap="round"/>
 </svg>
