@@ -31,7 +31,7 @@ type ValuationPreferences = Partial<Pick<Criteria, "businessMultiple" | "bookVal
 
 function readValuationPreferences(): ValuationPreferences | null {
   try {
-    const saved = JSON.parse(localStorage.getItem("noodle-valuation-v1") ?? "null") as Partial<ValuationPreferences> | null;
+    const saved = JSON.parse(localStorage.getItem("marketnuance-valuation-v1") ?? "null") as Partial<ValuationPreferences> | null;
     if (!saved) return null;
     const preferences: ValuationPreferences = {};
     if (typeof saved.businessMultiple === "number" && saved.businessMultiple > 0) preferences.businessMultiple = saved.businessMultiple;
@@ -49,8 +49,8 @@ function initialCriteria(): Criteria {
 
 function saveValuationPreferences(preferences: ValuationPreferences | null) {
   try {
-    if (preferences) localStorage.setItem("noodle-valuation-v1", JSON.stringify(preferences));
-    else localStorage.removeItem("noodle-valuation-v1");
+    if (preferences) localStorage.setItem("marketnuance-valuation-v1", JSON.stringify(preferences));
+    else localStorage.removeItem("marketnuance-valuation-v1");
   } catch {
     // Recalculation still works when browser storage is unavailable.
   }
@@ -102,7 +102,7 @@ function formatNumber(value: number | null, digits = 2): string {
 
 function readWatchlist(): Set<string> {
   try {
-    const saved = JSON.parse(localStorage.getItem("noodle-watch-v1") ?? "[]");
+    const saved = JSON.parse(localStorage.getItem("marketnuance-watch-v1") ?? "[]");
     return new Set(Array.isArray(saved) ? saved : []);
   } catch {
     return new Set();
@@ -127,7 +127,7 @@ function downloadCsv(rows: Stock[]) {
   const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = "noodle_stock_candidates.csv";
+  anchor.download = "marketnuance_stock_candidates.csv";
   anchor.click();
   window.setTimeout(() => URL.revokeObjectURL(url), 5_000);
 }
@@ -265,7 +265,7 @@ export default function App() {
     setWatchlist((current) => {
       const next = new Set(current);
       next.has(symbol) ? next.delete(symbol) : next.add(symbol);
-      localStorage.setItem("noodle-watch-v1", JSON.stringify([...next]));
+      localStorage.setItem("marketnuance-watch-v1", JSON.stringify([...next]));
       return next;
     });
   };
@@ -348,10 +348,10 @@ export default function App() {
     <main className="shell">
       <header className="masthead">
         <div className="brand-lockup">
-          <div className="monogram" aria-hidden="true">NA</div>
+          <div className="monogram" aria-hidden="true">MN</div>
           <div>
             <p className="eyebrow">Market intelligence console</p>
-            <h1>Noodle Analytics</h1>
+            <h1>MarketNuance</h1>
             <p className="intro">Screen market momentum against verified annual fundamentals.</p>
           </div>
         </div>

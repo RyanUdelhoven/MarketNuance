@@ -28,7 +28,7 @@ python3 app.py --refresh --symbols AAPL,MSFT
 python3 app.py
 ```
 
-Open http://127.0.0.1:8765; Ctrl+C stops the server. Refreshes process the complete eligible Alpaca universe by default. Set `NOODLE_SCREEN_LIMIT` or pass `--limit` to cap development runs. Full initial history collection may take time. Refresh after market close for final daily bars.
+Open http://127.0.0.1:8765; Ctrl+C stops the server. Refreshes process the complete eligible Alpaca universe by default. Set `MARKETNUANCE_SCREEN_LIMIT` or pass `--limit` to cap development runs. Full initial history collection may take time. Refresh after market close for final daily bars.
 
 Alpaca history is stored in `data/cache/alpaca/`; SEC facts remain in `data/cache/sec/`. SEC Submissions verifies whether a newer annual filing exists before refreshing facts. The interface visually separates market and financial filters and reports whether SEC ran.
 

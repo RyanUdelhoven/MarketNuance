@@ -30,7 +30,7 @@ Find new stock candidates for discretionary stock and options trading without a 
 - Revenue growth compares with a roughly year-earlier comparable full-year period. Net margin matches revenue and earnings by start/end date.
 - SEC and price dates differ. Nonstandard tags, foreign issuer filings and unmatched tickers may leave financial values blank. Missing never means zero.
 - Alpaca's `us_equity` class contains some ETFs and other instruments. Name-based exclusion is imperfect; this is Alpaca's eligible universe, not every U.S. common stock.
-- Screening defaults to the full eligible universe. `NOODLE_SCREEN_LIMIT` can restore a temporary cap.
+- Screening defaults to the full eligible universe. `MARKETNUANCE_SCREEN_LIMIT` can restore a temporary cap.
 - The default IEX request uses no intentional delay. A configured delay applies only when required by the selected Alpaca entitlement.
 - Historical bars and assets persist locally; snapshots update current market state on every screen.
 - Active SEC filters trigger filing checks only for Alpaca survivors. Unchanged facts remain cached.

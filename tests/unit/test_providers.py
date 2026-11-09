@@ -6,8 +6,8 @@ import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
 
-from noodle_analytics.http_client import ApiError
-from noodle_analytics.providers import AlpacaClient, SecClient
+from marketnuance.http_client import ApiError
+from marketnuance.providers import AlpacaClient, SecClient
 
 
 class FakeHttp:

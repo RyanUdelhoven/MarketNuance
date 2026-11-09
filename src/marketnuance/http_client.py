@@ -12,7 +12,7 @@ class ApiError(RuntimeError):
 
 
 class JsonHttpClient:
-    def __init__(self, user_agent="NoodleAnalytics/0.1", attempts=4, timeout=45, sleep=time.sleep):
+    def __init__(self, user_agent="MarketNuance/0.1", attempts=4, timeout=45, sleep=time.sleep):
         self.user_agent = user_agent
         self.attempts = attempts
         self.timeout = timeout

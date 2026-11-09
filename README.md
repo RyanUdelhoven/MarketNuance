@@ -1,31 +1,31 @@
-# Noodle Analytics
+# MarketNuance
 
-Noodle Analytics is a local stock-discovery application based on the project BRD and MVP baseline.
+MarketNuance is a local stock-discovery application based on the project BRD and MVP baseline.
 It screens active U.S. equities using Alpaca daily market data and SEC annual Company Facts. It
 does not place trades or make automatic recommendations.
 
 ## Run with Coulson
 
 Keep Docker Desktop and Coulson running, then open
-[Noodle Analytics](http://noodle-analytics.localhost:18080).
-Coulson starts the `noodle` Compose service on demand and stops it after its configured idle timeout.
+[MarketNuance](http://marketnuance.localhost:18080).
+Coulson starts the `marketnuance` Compose service on demand and stops it after its configured idle timeout.
 The built React frontend and Python API share one container, listening on port `8765`.
 Compose publishes it only at `127.0.0.1:8766`; Coulson provides the bookmark URL above.
 
 Register this project once on another machine:
 
 ```sh
-ln -s /absolute/path/to/NoodleAnalytics ~/.coulson/noodle-analytics
+ln -s /absolute/path/to/MarketNuance ~/.coulson/marketnuance
 coulson scan
 ```
 
-The `.coulson.toml` file selects Docker, `compose.yaml`, and the `noodle` service explicitly.
-Use `coulson stop noodle-analytics` to stop it, or `coulson logs noodle-analytics` for diagnostics.
-After changing source or dependencies, run `coulson stop noodle-analytics`,
+The `.coulson.toml` file selects Docker, `compose.yaml`, and the `marketnuance` service explicitly.
+Use `coulson stop marketnuance` to stop it, or `coulson logs marketnuance` for diagnostics.
+After changing source or dependencies, run `coulson stop marketnuance`,
 `docker compose build`, then revisit the bookmark.
 
 To unregister only this app, stop it, remove the matching
-`~/.coulson/noodle-analytics` symlink, and run `coulson scan`. Keep the data volume.
+`~/.coulson/marketnuance` symlink, and run `coulson scan`. Keep the data volume.
 
 ## Run with Docker directly
 
@@ -37,9 +37,9 @@ docker compose up --build -d
 
 Open <http://127.0.0.1:8766>. Stop it with `docker compose down`.
 
-The Compose service stores caches and snapshots in the `noodle-data` volume. The image runs as a
+The Compose service stores caches and snapshots in the `marketnuance-data` volume. The image runs as a
 non-root user and receives provider credentials only at runtime.
-The project-scoped volume is `noodle-analytics_noodle-data` for both Coulson and direct Compose use.
+The project-scoped volume is `marketnuance_marketnuance-data` for both Coulson and direct Compose use.
 Host files under `data/` remain separate and are not automatically imported.
 Normal stop/start preserves the volume; avoid `docker compose down -v`, which deletes it.
 The container does not restart automatically outside Coulson's managed lifecycle.
@@ -63,10 +63,10 @@ and changing them recalculates loaded results without contacting either provider
 To run without provider credentials, start the synthetic demo instead:
 
 ```sh
-docker compose run --rm --service-ports noodle --host 0.0.0.0 --demo
+docker compose run --rm --service-ports marketnuance --host 0.0.0.0 --demo
 ```
 
-Do not commit `.env`. Screening defaults to all eligible stocks. Set `NOODLE_SCREEN_LIMIT` to cap development runs.
+Do not commit `.env`. Screening defaults to all eligible stocks. Set `MARKETNUANCE_SCREEN_LIMIT` to cap development runs.
 
 ## Project map
 
@@ -74,7 +74,7 @@ Do not commit `.env`. Screening defaults to all eligible stocks. Set `NOODLE_SCR
 - `docs/architecture/` — system boundaries and workflow design.
 - `docs/decisions/` — architecture decision records.
 - `frontend/` — React and TypeScript browser application.
-- `src/noodle_analytics/` — application code, organized by responsibility.
+- `src/marketnuance/` — application code, organized by responsibility.
 - `data/` — ignored runtime caches, snapshots, and exports.
 - `scripts/` — local development and data-refresh entry points.
 - `tests/` — unit tests, provider integration tests, and fixtures.

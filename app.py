@@ -18,8 +18,8 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "src"))
 
-from noodle_analytics.http_client import ApiError
-from noodle_analytics.providers import AlpacaClient, SecClient
+from marketnuance.http_client import ApiError
+from marketnuance.providers import AlpacaClient, SecClient
 
 FRONTEND = ROOT / "frontend" / "dist"
 DATA = ROOT / "data"
@@ -591,9 +591,9 @@ def main():
     parser.add_argument("--refresh", action="store_true", help="Fetch latest eligible daily data")
     parser.add_argument("--demo", action="store_true", help="Show synthetic sample data")
     try:
-        default_limit = int(os.environ.get("NOODLE_SCREEN_LIMIT", "0"))
+        default_limit = int(os.environ.get("MARKETNUANCE_SCREEN_LIMIT", "0"))
     except ValueError:
-        parser.error("NOODLE_SCREEN_LIMIT must be a whole number")
+        parser.error("MARKETNUANCE_SCREEN_LIMIT must be a whole number")
     parser.add_argument("--limit", type=int, default=default_limit, help="Maximum symbols for refresh; 0 means all (default: 0)")
     parser.add_argument("--symbols", help="Optional comma-separated symbols to refresh")
     parser.add_argument("--host", default="127.0.0.1", help="Server bind address (default: 127.0.0.1)")
@@ -608,7 +608,7 @@ def main():
     Handler.refresh_limit = args.limit
     Handler.refresh_symbols = args.symbols
     with ThreadingHTTPServer((args.host, args.port), Handler) as server:
-        print(f"Serving Noodle Analytics on {args.host}:{args.port}  (Ctrl+C to stop)")
+        print(f"Serving MarketNuance on {args.host}:{args.port}  (Ctrl+C to stop)")
         try:
             server.serve_forever()
         except KeyboardInterrupt:

@@ -5,7 +5,7 @@ from pathlib import Path
 import re
 import time
 
-from noodle_analytics.http_client import ApiError, JsonHttpClient
+from marketnuance.http_client import ApiError, JsonHttpClient
 
 
 class SecClient:

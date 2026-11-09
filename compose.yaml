@@ -1,10 +1,10 @@
-name: noodle-analytics
+name: marketnuance
 
 services:
-  noodle:
+  marketnuance:
     build:
       context: .
-    image: noodle-analytics:local
+    image: marketnuance:local
     ports:
       - "127.0.0.1:8766:8765"
     environment:
@@ -12,13 +12,13 @@ services:
       APCA_API_SECRET_KEY: ${APCA_API_SECRET_KEY:-}
       ALPACA_DATA_FEED: ${ALPACA_DATA_FEED:-iex}
       ALPACA_DATA_DELAY_MINUTES: ${ALPACA_DATA_DELAY_MINUTES:-0}
-      NOODLE_SCREEN_LIMIT: ${NOODLE_SCREEN_LIMIT:-0}
+      MARKETNUANCE_SCREEN_LIMIT: ${MARKETNUANCE_SCREEN_LIMIT:-0}
       BUSINESS_MULTIPLE: ${BUSINESS_MULTIPLE:-15}
       BOOK_VALUE_MULTIPLE: ${BOOK_VALUE_MULTIPLE:-1.5}
       SEC_USER_AGENT: ${SEC_USER_AGENT:-}
     volumes:
-      - noodle-data:/app/data
+      - marketnuance-data:/app/data
     restart: "no"
 
 volumes:
-  noodle-data:
+  marketnuance-data:

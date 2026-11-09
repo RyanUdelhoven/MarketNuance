@@ -12,16 +12,16 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
 WORKDIR /app
-RUN adduser --disabled-password --gecos "" --uid 10001 noodle
+RUN adduser --disabled-password --gecos "" --uid 10001 marketnuance
 
 COPY app.py ./
 COPY src/ ./src/
 COPY --from=frontend-build /build/frontend/dist ./frontend/dist
 
 RUN mkdir -p data/cache/sec data/snapshots data/exports \
-    && chown -R noodle:noodle /app
+    && chown -R marketnuance:marketnuance /app
 
-USER noodle
+USER marketnuance
 EXPOSE 8765
 VOLUME ["/app/data"]
 
