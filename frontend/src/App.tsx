@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-table";
 import { fetchStocks, screenStocks } from "./api/stocks";
 import type { ApiStock, Criteria, Stock, StocksPayload } from "./types";
+import { Sidebar } from "./Sidebar";
 
 const DEFAULT_CRITERIA: Criteria = {
   includeValuation: true,
@@ -345,13 +346,15 @@ export default function App() {
   };
 
   return (
-    <main className="shell">
+    <div className="app-layout">
+    <Sidebar />
+    <main className="shell" id="screener">
       <header className="masthead">
         <div className="brand-lockup">
           <div className="monogram" aria-hidden="true">MN</div>
           <div>
             <p className="eyebrow">Market intelligence console</p>
-            <h1>Market Nuance</h1>
+            <h1>Screener</h1>
             <p className="intro">Screen market momentum against verified annual fundamentals.</p>
           </div>
         </div>
@@ -505,5 +508,6 @@ export default function App() {
         Missing values appear as — and never pass an active filter. Results support research; they are not trade recommendations.
       </footer>
     </main>
+    </div>
   );
 }
