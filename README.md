@@ -15,7 +15,7 @@ Compose publishes it only at `127.0.0.1:8766`; Coulson provides the bookmark URL
 Register this project once on another machine:
 
 ```sh
-ln -s /absolute/path/to/Noodle_Analytics ~/.coulson/noodle-analytics
+ln -s /absolute/path/to/NoodleAnalytics ~/.coulson/noodle-analytics
 coulson scan
 ```
 
