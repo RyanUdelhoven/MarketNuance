@@ -1,0 +1,2 @@
+"""Noodle Analytics application package."""
+

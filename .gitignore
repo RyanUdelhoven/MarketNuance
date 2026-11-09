@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.env
+.venv/
+frontend/node_modules/
+frontend/dist/
+frontend/*.tsbuildinfo
+data/cache/**
+data/snapshots/**
+data/exports/**
+!data/cache/.gitkeep
+!data/cache/sec/.gitkeep
+!data/snapshots/.gitkeep
+!data/exports/.gitkeep

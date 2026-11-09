@@ -1,0 +1,15 @@
+.git
+.gitignore
+.coulson.toml
+.env
+.env.*
+!.env.example
+**/__pycache__
+**/*.py[cod]
+frontend/node_modules
+frontend/dist
+frontend/*.tsbuildinfo
+data/cache
+data/snapshots
+data/exports
+

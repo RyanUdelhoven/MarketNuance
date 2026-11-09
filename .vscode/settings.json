@@ -1,0 +1,42 @@
+{
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/__pycache__": true,
+    "**/__pycache__/**": true,
+    "**/__init__.py": true,
+    "**/*.pyc": true,
+    "**/*.pyo": true,
+    "**/*.tsbuildinfo": true,
+    "frontend/node_modules": true,
+    "frontend/dist": true,
+    "data/cache": true,
+    "data/exports": true,
+    "data/snapshots": true
+  },
+  "search.exclude": {
+    "**/__pycache__": true,
+    "frontend/node_modules": true,
+    "frontend/dist": true,
+    "data/cache": true,
+    "data/exports": true,
+    "data/snapshots": true
+  },
+  "files.watcherExclude": {
+    "**/__pycache__/**": true,
+    "**/*.tsbuildinfo": true,
+    "**/frontend/node_modules/**": true,
+    "**/frontend/dist/**": true,
+    "**/data/cache/**": true,
+    "**/data/exports/**": true,
+    "**/data/snapshots/**": true
+  },
+  "explorer.compactFolders": false,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json",
+    "tsconfig.json": "tsconfig.*.json",
+    "Dockerfile": ".dockerignore, compose.yaml",
+    ".env.example": ".env"
+  }
+}

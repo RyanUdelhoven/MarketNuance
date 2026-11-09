@@ -1,0 +1,4 @@
+kind = "docker"
+service = "noodle"
+compose_file = "compose.yaml"
+port = 8766
