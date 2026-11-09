@@ -608,7 +608,7 @@ def main():
     Handler.refresh_limit = args.limit
     Handler.refresh_symbols = args.symbols
     with ThreadingHTTPServer((args.host, args.port), Handler) as server:
-        print(f"Serving MarketNuance on {args.host}:{args.port}  (Ctrl+C to stop)")
+        print(f"Serving Market Nuance on {args.host}:{args.port}  (Ctrl+C to stop)")
         try:
             server.serve_forever()
         except KeyboardInterrupt:

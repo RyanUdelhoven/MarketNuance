@@ -351,7 +351,7 @@ export default function App() {
           <div className="monogram" aria-hidden="true">MN</div>
           <div>
             <p className="eyebrow">Market intelligence console</p>
-            <h1>MarketNuance</h1>
+            <h1>Market Nuance</h1>
             <p className="intro">Screen market momentum against verified annual fundamentals.</p>
           </div>
         </div>

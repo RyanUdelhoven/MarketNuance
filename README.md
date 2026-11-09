@@ -1,13 +1,13 @@
-# MarketNuance
+# Market Nuance
 
-MarketNuance is a local stock-discovery application based on the project BRD and MVP baseline.
+Market Nuance is a local stock-discovery application based on the project BRD and MVP baseline.
 It screens active U.S. equities using Alpaca daily market data and SEC annual Company Facts. It
 does not place trades or make automatic recommendations.
 
 ## Run with Coulson
 
 Keep Docker Desktop and Coulson running, then open
-[MarketNuance](http://marketnuance.localhost:18080).
+[Market Nuance](http://marketnuance.localhost:18080).
 Coulson starts the `marketnuance` Compose service on demand and stops it after its configured idle timeout.
 The built React frontend and Python API share one container, listening on port `8765`.
 Compose publishes it only at `127.0.0.1:8766`; Coulson provides the bookmark URL above.

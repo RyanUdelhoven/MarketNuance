@@ -1,1 +1,1 @@
-"""MarketNuance application package."""
+"""Market Nuance application package."""
